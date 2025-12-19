@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsEngage | Automated WhatsApp Marketing for Business</title>
+    <meta name="description" content="Send bulk WhatsApp campaigns without getting banned.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        /* Simple fade effect for text change */
+        .fade-in { animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800 font-sans antialiased">
+
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <div class="bg-green-600 text-white w-10 h-10 flex items-center justify-center rounded-lg text-xl">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-slate-900">WhatsEngage</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-slate-600 hover:text-green-600 font-medium" data-i18n="nav_features">Features</a>
+                    <a href="#pricing" class="text-slate-600 hover:text-green-600 font-medium" data-i18n="nav_pricing">Pricing</a>
+                    
+                    <button onclick="toggleLanguage()" class="flex items-center gap-2 border border-slate-300 px-3 py-1.5 rounded-full hover:bg-slate-100 transition text-sm font-semibold">
+                        <i class="fa-solid fa-globe text-slate-500"></i>
+                        <span id="lang-label">EN</span>
+                    </button>
+
+                    <a href="#signup" class="bg-slate-900 text-white px-6 py-2.5 rounded-full hover:bg-slate-800 transition shadow-lg shadow-slate-900/20 font-medium" data-i18n="nav_btn">
+                        Get Early Access
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-12 pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
+            
+            <div class="lg:w-1/2 text-center lg:text-left z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-semibold mb-6 border border-green-200">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    <span data-i18n="hero_badge">Accepting Early Access Users</span>
+                </div>
+                <h1 class="text-4xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+                    <span data-i18n="hero_title_1">Reach Customers on the App</span> <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600" data-i18n="hero_title_2">They Actually Open.</span>
+                </h1>
+                <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_desc">
+                    Stop relying on emails with 5% open rates. Send personalized WhatsApp campaigns safely using the official API.
+                </p>
+
+                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-slate-200 border border-slate-100 max-w-lg mx-auto lg:mx-0" id="signup">
+                    <div class="mb-4 pb-2 border-b border-slate-100">
+                        <h3 class="font-bold text-slate-800" data-i18n="form_title">Register Your Business</h3>
+                        <p class="text-sm text-slate-500" data-i18n="form_subtitle">Get verified access to the WhatsApp API.</p>
+                    </div>
+                    
+                    <form action="https://formspree.io/f/xgoweqbo" method="POST" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase" data-i18n="lbl_name">Your Name</label>
+                                <input type="text" name="name" data-placeholder="ph_name" placeholder="Rahul" required class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase" data-i18n="lbl_biz">Business Name</label>
+                                <input type="text" name="business_name" data-placeholder="ph_biz" placeholder="e.g. Rahul Electronics" required class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase" data-i18n="lbl_email">Work Email</label>
+                                <input type="email" name="email" data-placeholder="ph_email" placeholder="rahul@business.com" required class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase" data-i18n="lbl_phone">WhatsApp Number</label>
+                                <input type="tel" name="phone" placeholder="+91 98765 43210" required class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase" data-i18n="lbl_addr">Business Address (City)</label>
+                            <input type="text" name="address" data-placeholder="ph_addr" placeholder="e.g. Indore, MP" required class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
+                        </div>
+
+                        <button type="submit" class="w-full bg-green-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition shadow-lg shadow-green-600/20 flex justify-center items-center gap-2">
+                            <span data-i18n="btn_submit">Request Access</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <p class="mt-4 text-xs text-slate-400 text-center lg:text-left">
+                    <i class="fa-solid fa-lock mr-1"></i> <span data-i18n="form_secure">Your data is secure and never shared.</span>
+                </p>
+            </div>
+
+            <div class="lg:w-1/2 flex justify-center relative hidden lg:flex">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-green-200/50 rounded-full blur-3xl -z-10"></div>
+                <div class="relative bg-slate-900 border-slate-900 border-[12px] rounded-[2.5rem] h-[600px] w-[320px] shadow-2xl flex flex-col overflow-hidden transform rotate-[-2deg] hover:rotate-0 transition duration-500">
+                    <div class="absolute top-0 w-full flex justify-center pointer-events-none z-20"><div class="h-[24px] w-[100px] bg-black rounded-b-[1rem]"></div></div>
+                    <div class="bg-[#efe7dd] flex-grow pt-12 px-4 overflow-hidden relative font-sans">
+                        <div class="absolute inset-0 opacity-[0.06]" style="background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');"></div>
+                        <div class="bg-[#075e54] text-white p-3 -mx-4 -mt-12 mb-4 pt-12 flex items-center gap-3 relative z-10 shadow-sm">
+                            <div class="w-8 h-8 rounded-full bg-white text-green-700 flex items-center justify-center font-bold">B</div>
+                            <div>
+                                <p class="font-semibold text-sm">Burger Joint</p>
+                                <p class="text-[10px] opacity-80">Official Business Account</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm mb-2 relative z-10 max-w-[90%] text-sm">
+                            <p class="text-slate-800 leading-relaxed">
+                                Hey <strong>Rahul</strong>! 👋 <br>
+                                Long time no see. We just launched a new <strong>Spicy Paneer Burger</strong>! 🍔
+                            </p>
+                            <p class="text-[10px] text-slate-400 text-right mt-1">10:05 AM</p>
+                        </div>
+                        <div class="bg-white p-1 rounded-lg rounded-tl-none shadow-sm mb-2 relative z-10 max-w-[90%]">
+                            <div class="h-32 bg-orange-100 rounded-md flex items-center justify-center text-orange-400 mb-1 overflow-hidden">
+                                <i class="fa-solid fa-burger text-4xl"></i>
+                            </div>
+                            <p class="text-[10px] text-slate-400 text-right px-2 pb-1">10:05 AM</p>
+                        </div>
+                        <div class="bg-white text-[#00a884] text-center py-2.5 rounded-lg shadow-sm font-semibold text-sm relative z-10 cursor-pointer border border-slate-100 hover:bg-slate-50 mt-4">
+                            <i class="fa-solid fa-cart-shopping mr-1"></i> Order Now (20% OFF)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4" data-i18n="feat_head">Why Businesses Switch to WhatsEngage</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto" data-i18n="feat_sub">Manual broadcasting is risky and slow. We built the engine designed for growth, not bans.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition group">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-2xl mb-6 group-hover:scale-110 transition"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900" data-i18n="f1_title">Anti-Ban Guarantee</h3>
+                    <p class="text-slate-600 leading-relaxed" data-i18n="f1_desc">We use the official Meta Cloud API. Unlike chrome extensions that get you banned, our route is 100% verified and safe.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:scale-110 transition"><i class="fa-solid fa-file-csv"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900" data-i18n="f2_title">Excel / CSV Upload</h3>
+                    <p class="text-slate-600 leading-relaxed" data-i18n="f2_desc">Have 5,000 customers in an Excel sheet? Drag and drop it. We automatically format numbers and remove duplicates.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition group">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-2xl mb-6 group-hover:scale-110 transition"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900" data-i18n="f3_title">Smart Personalization</h3>
+                    <p class="text-slate-600 leading-relaxed" data-i18n="f3_desc">Don't send robotic messages. Use variables like {Name} or {Order Date} to increase conversion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4" data-i18n="price_head">Simple, Transparent Pricing</h2>
+                <p class="text-slate-600" data-i18n="price_sub">No hidden setup fees. Cancel anytime.</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-lg">
+                    <h3 class="text-lg font-medium text-slate-500 mb-2">Starter</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-bold text-slate-900">₹999</span>
+                        <span class="text-slate-500">/mo</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-slate-700"><i class="fa-solid fa-check text-green-500"></i> 1,000 Messages / mo</li>
+                        <li class="flex items-center gap-3 text-slate-700"><i class="fa-solid fa-check text-green-500"></i> CSV Import</li>
+                    </ul>
+                    <a href="#signup" class="block w-full py-3 px-4 bg-slate-100 text-slate-900 font-bold text-center rounded-xl hover:bg-slate-200 transition" data-i18n="btn_waitlist">Join Waitlist</a>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-3xl shadow-2xl relative transform md:scale-105 border border-slate-800">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">Most Popular</div>
+                    <h3 class="text-lg font-medium text-green-400 mb-2">Growth</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-bold text-white">₹2,499</span>
+                        <span class="text-slate-400">/mo</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-slate-300"><div class="bg-green-500/20 p-1 rounded-full"><i class="fa-solid fa-check text-green-400 text-xs"></i></div> Unlimited Messages</li>
+                        <li class="flex items-center gap-3 text-slate-300"><div class="bg-green-500/20 p-1 rounded-full"><i class="fa-solid fa-check text-green-400 text-xs"></i></div> Green Tick Assistance</li>
+                    </ul>
+                    <a href="#signup" class="block w-full py-3 px-4 bg-green-600 text-white font-bold text-center rounded-xl hover:bg-green-700 transition shadow-lg shadow-green-900/50" data-i18n="nav_btn">Get Early Access</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center gap-2 mb-6 text-white text-xl font-bold">
+                 <i class="fa-brands fa-whatsapp"></i> WhatsEngage
+            </div>
+            <p class="text-slate-500 text-sm">&copy; 2025 WhatsEngage. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                nav_features: "Features",
+                nav_pricing: "Pricing",
+                nav_btn: "Get Early Access",
+                hero_badge: "Accepting Early Access Users",
+                hero_title_1: "Reach Customers on the App",
+                hero_title_2: "They Actually Open.",
+                hero_desc: "Stop relying on emails with 5% open rates. Send personalized WhatsApp campaigns safely using the official API.",
+                form_title: "Register Your Business",
+                form_subtitle: "Get verified access to the WhatsApp API.",
+                lbl_name: "Your Name",
+                ph_name: "Rahul",
+                lbl_biz: "Business Name",
+                ph_biz: "e.g. Rahul Electronics",
+                lbl_email: "Work Email",
+                ph_email: "rahul@business.com",
+                lbl_phone: "WhatsApp Number",
+                lbl_addr: "Business Address (City)",
+                ph_addr: "e.g. Indore, MP",
+                btn_submit: "Request Access",
+                form_secure: "Your data is secure and never shared.",
+                feat_head: "Why Businesses Switch to WhatsEngage",
+                feat_sub: "Manual broadcasting is risky and slow. We built the engine designed for growth, not bans.",
+                f1_title: "Anti-Ban Guarantee",
+                f1_desc: "We use the official Meta Cloud API. Unlike chrome extensions that get you banned, our route is 100% verified and safe.",
+                f2_title: "Excel / CSV Upload",
+                f2_desc: "Have 5,000 customers in an Excel sheet? Drag and drop it. We automatically format numbers and remove duplicates.",
+                f3_title: "Smart Personalization",
+                f3_desc: "Don't send robotic messages. Use variables like {Name} or {Order Date} to increase conversion.",
+                price_head: "Simple, Transparent Pricing",
+                price_sub: "No hidden setup fees. Cancel anytime.",
+                btn_waitlist: "Join Waitlist"
+            },
+            hi: {
+                nav_features: "सुविधाएँ",
+                nav_pricing: "कीमतें",
+                nav_btn: "अभी एक्सेस प्राप्त करें",
+                hero_badge: "अर्ली एक्सेस यूज़र्स के लिए खुला है",
+                hero_title_1: "ग्राहकों तक उस ऐप पर पहुँचें",
+                hero_title_2: "जिसे वे वास्तव में खोलते हैं।",
+                hero_desc: "5% ओपन रेट वाले ईमेल पर भरोसा करना बंद करें। आधिकारिक API का उपयोग करके सुरक्षित रूप से व्हाट्सएप कैंपेन भेजें।",
+                form_title: "अपना बिज़नेस रजिस्टर करें",
+                form_subtitle: "WhatsApp API का वेरीफाइड एक्सेस प्राप्त करें।",
+                lbl_name: "आपका नाम",
+                ph_name: "राहुल",
+                lbl_biz: "बिज़नेस का नाम",
+                ph_biz: "उदा. राहुल इलेक्ट्रॉनिक्स",
+                lbl_email: "वर्क ईमेल",
+                ph_email: "rahul@business.com",
+                lbl_phone: "व्हाट्सएप नंबर",
+                lbl_addr: "बिज़नेस पता (शहर)",
+                ph_addr: "उदा. गाडरवारा, म.प्र.",
+                btn_submit: "एक्सेस का अनुरोध करें",
+                form_secure: "आपका डेटा सुरक्षित है और कभी साझा नहीं किया जाता है।",
+                feat_head: "बिज़नेस WhatsEngage पर क्यों आ रहे हैं?",
+                feat_sub: "मैन्युअल मैसेज भेजना जोखिम भरा और धीमा है। हमने ऐसा इंजन बनाया है जो बैन के लिए नहीं, बल्कि ग्रोथ के लिए है।",
+                f1_title: "एंटी-बैन गारंटी",
+                f1_desc: "हम आधिकारिक मेटा क्लाउड एपीआई का उपयोग करते हैं। क्रोम एक्सटेंशन के विपरीत जो आपको बैन करवाते हैं, हमारा तरीका 100% वेरीफाइड और सुरक्षित है।",
+                f2_title: "Excel / CSV अपलोड",
+                f2_desc: "क्या एक्सेल शीट में 5,000 ग्राहक हैं? इसे ड्रैग और ड्रॉप करें। हम स्वचालित रूप से नंबर फॉर्मेट करते हैं और डुप्लिकेट हटाते हैं।",
+                f3_title: "स्मार्ट पर्सनलाइज़ेशन",
+                f3_desc: "रोबोटिक संदेश न भेजें। कन्वर्ज़न बढ़ाने के लिए {Name} या {Order Date} जैसे वेरिएबल का उपयोग करें।",
+                price_head: "सरल, पारदर्शी कीमतें",
+                price_sub: "कोई छिपी हुई फीस नहीं। कभी भी कैंसिल करें।",
+                btn_waitlist: "वेटलिस्ट में शामिल हों"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            // Toggle state
+            currentLang = currentLang === 'en' ? 'hi' : 'en';
+            
+            // Update Button Text
+            document.getElementById('lang-label').innerText = currentLang === 'en' ? 'EN' : 'हिंदी';
+
+            // Update all text elements
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    // Add fade animation
+                    element.classList.remove('fade-in');
+                    void element.offsetWidth; // trigger reflow
+                    element.classList.add('fade-in');
+                    
+                    element.innerText = translations[currentLang][key];
+                }
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-placeholder');
+                if (translations[currentLang][key]) {
+                    element.setAttribute('placeholder', translations[currentLang][key]);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
