@@ -9,7 +9,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
-        /* Simple fade effect for text change */
         .fade-in { animation: fadeIn 0.5s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
@@ -66,9 +65,15 @@
                     <div class="mb-4 pb-2 border-b border-slate-100">
                         <h3 class="font-bold text-slate-800" data-i18n="form_title">Register Your Business</h3>
                         <p class="text-sm text-slate-500" data-i18n="form_subtitle">Get verified access to the WhatsApp API.</p>
+                        <p id="plan-feedback" class="text-xs font-bold text-green-600 mt-1 hidden">
+                            <i class="fa-solid fa-check-circle"></i> Selected Plan: <span id="plan-name-display"></span>
+                        </p>
                     </div>
                     
                     <form action="https://formspree.io/f/meejodye" method="POST" class="space-y-4">
+                        
+                        <input type="hidden" id="plan_input" name="plan" value="General Interest">
+
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase" data-i18n="lbl_name">Your Name</label>
@@ -135,7 +140,7 @@
                             <p class="text-[10px] text-slate-400 text-right mt-1">10:05 AM</p>
                         </div>
 
-                         <div class="bg-white p-1 rounded-lg rounded-tl-none shadow-sm mb-2 relative z-10 max-w-[90%]">
+                        <div class="bg-white p-1 rounded-lg rounded-tl-none shadow-sm mb-2 relative z-10 max-w-[90%]">
                             <div class="h-32 bg-blue-100 rounded-md flex items-center justify-center text-blue-500 mb-1 overflow-hidden">
                                 <i class="fa-solid fa-person-running text-5xl"></i>
                             </div>
@@ -146,7 +151,8 @@
                             <i class="fa-solid fa-bolt mr-1"></i> Renew & Claim Offer
                         </div>
                     </div>
-                     </div>
+
+                </div>
             </div>
         </div>
     </section>
@@ -196,7 +202,7 @@
                         <li class="flex items-center gap-3 text-slate-700"><i class="fa-solid fa-check text-green-500"></i> 1,000 Messages / mo</li>
                         <li class="flex items-center gap-3 text-slate-700"><i class="fa-solid fa-check text-green-500"></i> CSV Import</li>
                     </ul>
-                    <a href="#signup" class="block w-full py-3 px-4 bg-slate-100 text-slate-900 font-bold text-center rounded-xl hover:bg-slate-200 transition" data-i18n="btn_waitlist">Join Waitlist</a>
+                    <a href="#signup" onclick="selectPlan('Starter')" class="block w-full py-3 px-4 bg-slate-100 text-slate-900 font-bold text-center rounded-xl hover:bg-slate-200 transition" data-i18n="btn_waitlist">Join Waitlist</a>
                 </div>
 
                 <div class="bg-slate-900 p-8 rounded-3xl shadow-2xl relative transform md:scale-105 border border-slate-800">
@@ -210,7 +216,7 @@
                         <li class="flex items-center gap-3 text-slate-300"><div class="bg-green-500/20 p-1 rounded-full"><i class="fa-solid fa-check text-green-400 text-xs"></i></div> Unlimited Messages</li>
                         <li class="flex items-center gap-3 text-slate-300"><div class="bg-green-500/20 p-1 rounded-full"><i class="fa-solid fa-check text-green-400 text-xs"></i></div> Green Tick Assistance</li>
                     </ul>
-                    <a href="#signup" class="block w-full py-3 px-4 bg-green-600 text-white font-bold text-center rounded-xl hover:bg-green-700 transition" data-i18n="nav_btn">Get Early Access</a>
+                    <a href="#signup" onclick="selectPlan('Growth')" class="block w-full py-3 px-4 bg-green-600 text-white font-bold text-center rounded-xl hover:bg-green-700 transition" data-i18n="nav_btn">Get Early Access</a>
                 </div>
             </div>
         </div>
@@ -317,6 +323,29 @@
                     element.setAttribute('placeholder', translations[currentLang][key]);
                 }
             });
+        }
+
+        // --- NEW FUNCTION: SELECT PLAN ---
+        function selectPlan(planName) {
+            // 1. Update Hidden Input Value
+            const planInput = document.getElementById('plan_input');
+            if(planInput) {
+                planInput.value = planName;
+            }
+
+            // 2. Show Visual Feedback in Form (Optional but nice)
+            const feedbackBox = document.getElementById('plan-feedback');
+            const feedbackName = document.getElementById('plan-name-display');
+            if(feedbackBox && feedbackName) {
+                feedbackBox.classList.remove('hidden');
+                feedbackName.innerText = planName;
+            }
+
+            // 3. Scroll to Form is handled automatically by href="#signup"
+            // But we can force focus to the first field to be helpful
+            setTimeout(() => {
+                document.getElementsByName('name')[0].focus();
+            }, 600); // Small delay to wait for smooth scroll
         }
     </script>
 </body>
