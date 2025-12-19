@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        html { scroll-behavior: smooth; }
-        .fade-in { animation: fadeIn 0.5s; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
+
 <body class="bg-slate-50 text-gray-800 font-sans antialiased">
 
     <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
@@ -24,17 +40,22 @@
                     </div>
                     <span class="text-xl font-bold tracking-tight text-slate-900">WhatsEngage</span>
                 </div>
-                
+
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-slate-600 hover:text-green-600 font-medium" data-i18n="nav_features">Features</a>
-                    <a href="#pricing" class="text-slate-600 hover:text-green-600 font-medium" data-i18n="nav_pricing">Pricing</a>
-                    
-                    <button onclick="toggleLanguage()" class="flex items-center gap-2 border border-slate-300 px-3 py-1.5 rounded-full hover:bg-slate-100 transition text-sm font-semibold">
+                    <a href="#features" class="text-slate-600 hover:text-green-600 font-medium"
+                        data-i18n="nav_features">Features</a>
+                    <a href="#pricing" class="text-slate-600 hover:text-green-600 font-medium"
+                        data-i18n="nav_pricing">Pricing</a>
+
+                    <button onclick="toggleLanguage()"
+                        class="flex items-center gap-2 border border-slate-300 px-3 py-1.5 rounded-full hover:bg-slate-100 transition text-sm font-semibold">
                         <i class="fa-solid fa-globe text-slate-500"></i>
                         <span id="lang-label">EN</span>
                     </button>
 
-                    <a href="#signup" class="bg-slate-900 text-white px-6 py-2.5 rounded-full hover:bg-slate-800 transition shadow-lg shadow-slate-900/20 font-medium" data-i18n="nav_btn">
+                    <a href="#signup"
+                        class="bg-slate-900 text-white px-6 py-2.5 rounded-full hover:bg-slate-800 transition shadow-lg shadow-slate-900/20 font-medium"
+                        data-i18n="nav_btn">
                         Get Early Access
                     </a>
                 </div>
@@ -44,85 +65,114 @@
 
     <section class="relative pt-12 pb-24 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
-            
+
             <div class="lg:w-1/2 text-center lg:text-left z-10">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-semibold mb-6 border border-green-200">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-semibold mb-6 border border-green-200">
                     <span class="relative flex h-2 w-2">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                     </span>
                     <span data-i18n="hero_badge">Accepting Early Access Users</span>
                 </div>
                 <h1 class="text-4xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
                     <span data-i18n="hero_title_1">Reach Customers on the App</span> <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600" data-i18n="hero_title_2">They Actually Open.</span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600"
+                        data-i18n="hero_title_2">They Actually Open.</span>
                 </h1>
                 <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_desc">
-                    Stop relying on emails with 5% open rates. Send personalized WhatsApp campaigns safely using the official API.
+                    Stop relying on emails with 5% open rates. Send personalized WhatsApp campaigns safely using the
+                    official API.
                 </p>
 
-                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-slate-200 border border-slate-100 max-w-lg mx-auto lg:mx-0" id="signup">
+                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-slate-200 border border-slate-100 max-w-lg mx-auto lg:mx-0"
+                    id="signup">
                     <div class="mb-4 pb-2 border-b border-slate-100">
                         <h3 class="font-bold text-slate-800" data-i18n="form_title">Register Your Business</h3>
-                        <p class="text-sm text-slate-500" data-i18n="form_subtitle">Get verified access to the WhatsApp API.</p>
-                        
+                        <p class="text-sm text-slate-500" data-i18n="form_subtitle">Get verified access to the WhatsApp
+                            API.</p>
+
                         <p id="plan-feedback" class="text-xs font-bold text-green-600 mt-1 hidden">
-                            <i class="fa-solid fa-check-circle"></i> 
-                            <span id="feedback-label">Selected Plan:</span> 
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span id="feedback-label">Selected Plan:</span>
                             <span id="plan-name-display"></span>
                         </p>
                     </div>
-                    
+
                     <form action="https://formspree.io/f/meejodye" method="POST" class="space-y-4">
                         <input type="hidden" id="plan_input" name="plan" value="General Interest">
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase" data-i18n="lbl_name">Your Name</label>
-                                <input type="text" name="name" data-placeholder="ph_name" placeholder="Rahul" required class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
+                                <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase"
+                                    data-i18n="lbl_name">Your Name</label>
+                                <input type="text" name="name" data-placeholder="ph_name" placeholder="Rahul" required
+                                    class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase" data-i18n="lbl_biz">Business Name</label>
-                                <input type="text" name="business_name" data-placeholder="ph_biz" placeholder="e.g. Rahul Electronics" required class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
+                                <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase"
+                                    data-i18n="lbl_biz">Business Name</label>
+                                <input type="text" name="business_name" data-placeholder="ph_biz"
+                                    placeholder="e.g. Rahul Electronics" required
+                                    class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase" data-i18n="lbl_email">Work Email</label>
-                                <input type="email" name="email" data-placeholder="ph_email" placeholder="rahul@business.com" required class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
+                                <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase"
+                                    data-i18n="lbl_email">Work Email</label>
+                                <input type="email" name="email" data-placeholder="ph_email"
+                                    placeholder="rahul@business.com" required
+                                    class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase" data-i18n="lbl_phone">WhatsApp Number</label>
-                                <input type="tel" name="phone" placeholder="+91 98765 43210" required class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
+                                <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase"
+                                    data-i18n="lbl_phone">WhatsApp Number</label>
+                                <input type="tel" name="phone" placeholder="+91 98765 43210" required
+                                    class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase" data-i18n="lbl_addr">Business Address (City)</label>
-                            <input type="text" name="address" data-placeholder="ph_addr" placeholder="e.g. Indore, MP" required class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
+                            <label class="block text-xs font-semibold text-slate-500 mb-1 uppercase"
+                                data-i18n="lbl_addr">Business Address (City)</label>
+                            <input type="text" name="address" data-placeholder="ph_addr" placeholder="e.g. Indore, MP"
+                                required
+                                class="w-full px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-green-500 outline-none transition">
                         </div>
 
-                        <button type="submit" class="w-full bg-green-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition shadow-lg shadow-green-600/20 flex justify-center items-center gap-2">
+                        <button type="submit"
+                            class="w-full bg-green-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition shadow-lg shadow-green-600/20 flex justify-center items-center gap-2">
                             <span data-i18n="btn_submit">Request Access</span> <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </form>
                 </div>
-                
+
                 <p class="mt-4 text-xs text-slate-400 text-center lg:text-left">
-                    <i class="fa-solid fa-lock mr-1"></i> <span data-i18n="form_secure">Your data is secure and never shared.</span>
+                    <i class="fa-solid fa-lock mr-1"></i> <span data-i18n="form_secure">Your data is secure and never
+                        shared.</span>
                 </p>
             </div>
 
             <div class="lg:w-1/2 flex justify-center relative hidden lg:flex">
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-green-200/50 rounded-full blur-3xl -z-10"></div>
-                <div class="relative bg-slate-900 border-slate-900 border-[12px] rounded-[2.5rem] h-[600px] w-[320px] shadow-2xl flex flex-col overflow-hidden transform rotate-[-2deg] hover:rotate-0 transition duration-500">
-                    <div class="absolute top-0 w-full flex justify-center pointer-events-none z-20"><div class="h-[24px] w-[100px] bg-black rounded-b-[1rem]"></div></div>
-                    
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-green-200/50 rounded-full blur-3xl -z-10">
+                </div>
+                <div
+                    class="relative bg-slate-900 border-slate-900 border-[12px] rounded-[2.5rem] h-[600px] w-[320px] shadow-2xl flex flex-col overflow-hidden transform rotate-[-2deg] hover:rotate-0 transition duration-500">
+                    <div class="absolute top-0 w-full flex justify-center pointer-events-none z-20">
+                        <div class="h-[24px] w-[100px] bg-black rounded-b-[1rem]"></div>
+                    </div>
+
                     <div class="bg-[#efe7dd] flex-grow pt-12 px-4 overflow-hidden relative font-sans">
-                        <div class="absolute inset-0 opacity-[0.06]" style="background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');"></div>
-                        
-                        <div class="bg-[#075e54] text-white p-3 -mx-4 -mt-12 mb-4 pt-12 flex items-center gap-3 relative z-10 shadow-sm">
+                        <div class="absolute inset-0 opacity-[0.06]"
+                            style="background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');">
+                        </div>
+
+                        <div
+                            class="bg-[#075e54] text-white p-3 -mx-4 -mt-12 mb-4 pt-12 flex items-center gap-3 relative z-10 shadow-sm">
                             <div class="w-8 h-8 rounded-full bg-white text-green-700 flex items-center justify-center">
                                 <i class="fa-solid fa-dumbbell text-sm"></i>
                             </div>
@@ -131,8 +181,9 @@
                                 <p class="text-[10px] opacity-80" data-i18n="phone_sub">Official Business Account</p>
                             </div>
                         </div>
-                        
-                        <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm mb-2 relative z-10 max-w-[90%] text-sm">
+
+                        <div
+                            class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm mb-2 relative z-10 max-w-[90%] text-sm">
                             <p class="text-slate-800 leading-relaxed" data-i18n="phone_msg">
                                 Hi <strong>Rahul</strong>! 💪 <br>
                                 Don't break your streak! Your membership is due for renewal.
@@ -143,13 +194,15 @@
                         </div>
 
                         <div class="bg-white p-1 rounded-lg rounded-tl-none shadow-sm mb-2 relative z-10 max-w-[90%]">
-                            <div class="h-32 bg-blue-100 rounded-md flex items-center justify-center text-blue-500 mb-1 overflow-hidden">
+                            <div
+                                class="h-32 bg-blue-100 rounded-md flex items-center justify-center text-blue-500 mb-1 overflow-hidden">
                                 <i class="fa-solid fa-person-running text-5xl"></i>
                             </div>
                             <p class="text-[10px] text-slate-400 text-right px-2 pb-1">10:05 AM</p>
                         </div>
 
-                        <div class="bg-white text-[#00a884] text-center py-2.5 rounded-lg shadow-sm font-semibold text-sm relative z-10 cursor-pointer border border-slate-100 hover:bg-slate-50 mt-4" data-i18n="phone_btn">
+                        <div class="bg-white text-[#00a884] text-center py-2.5 rounded-lg shadow-sm font-semibold text-sm relative z-10 cursor-pointer border border-slate-100 hover:bg-slate-50 mt-4"
+                            data-i18n="phone_btn">
                             <i class="fa-solid fa-bolt mr-1"></i> Renew & Claim Offer
                         </div>
                     </div>
@@ -162,25 +215,39 @@
     <section id="features" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4" data-i18n="feat_head">Why Businesses Switch to WhatsEngage</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto" data-i18n="feat_sub">Manual broadcasting is risky and slow. We built the engine designed for growth, not bans.</p>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4" data-i18n="feat_head">Why Businesses Switch to
+                    WhatsEngage</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto" data-i18n="feat_sub">Manual broadcasting is risky and slow.
+                    We built the engine designed for growth, not bans.</p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition group">
-                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-2xl mb-6 group-hover:scale-110 transition"><i class="fa-solid fa-shield-halved"></i></div>
+                <div
+                    class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition group">
+                    <div
+                        class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-shield-halved"></i></div>
                     <h3 class="text-xl font-bold mb-3 text-slate-900" data-i18n="f1_title">Anti-Ban Guarantee</h3>
-                    <p class="text-slate-600 leading-relaxed" data-i18n="f1_desc">We use the official Meta Cloud API. Unlike chrome extensions that get you banned, our route is 100% verified and safe.</p>
+                    <p class="text-slate-600 leading-relaxed" data-i18n="f1_desc">We use the official Meta Cloud API.
+                        Unlike chrome extensions that get you banned, our route is 100% verified and safe.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition group">
-                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:scale-110 transition"><i class="fa-solid fa-file-csv"></i></div>
+                <div
+                    class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition group">
+                    <div
+                        class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-file-csv"></i></div>
                     <h3 class="text-xl font-bold mb-3 text-slate-900" data-i18n="f2_title">Excel / CSV Upload</h3>
-                    <p class="text-slate-600 leading-relaxed" data-i18n="f2_desc">Have 5,000 customers in an Excel sheet? Drag and drop it. We automatically format numbers and remove duplicates.</p>
+                    <p class="text-slate-600 leading-relaxed" data-i18n="f2_desc">Have 5,000 customers in an Excel
+                        sheet? Drag and drop it. We automatically format numbers and remove duplicates.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition group">
-                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-2xl mb-6 group-hover:scale-110 transition"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <div
+                    class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition group">
+                    <div
+                        class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i></div>
                     <h3 class="text-xl font-bold mb-3 text-slate-900" data-i18n="f3_title">Smart Personalization</h3>
-                    <p class="text-slate-600 leading-relaxed" data-i18n="f3_desc">Don't send robotic messages. Use variables like {Name} or {Order Date} to increase conversion.</p>
+                    <p class="text-slate-600 leading-relaxed" data-i18n="f3_desc">Don't send robotic messages. Use
+                        variables like {Name} or {Order Date} to increase conversion.</p>
                 </div>
             </div>
         </div>
@@ -189,7 +256,8 @@
     <section id="pricing" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4" data-i18n="price_head">Simple, Transparent Pricing</h2>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4" data-i18n="price_head">Simple, Transparent Pricing
+                </h2>
                 <p class="text-slate-600" data-i18n="price_sub">No hidden setup fees. Cancel anytime.</p>
             </div>
 
@@ -201,24 +269,42 @@
                         <span class="text-slate-500">/mo</span>
                     </div>
                     <ul class="space-y-4 mb-8">
-                        <li class="flex items-center gap-3 text-slate-700"><i class="fa-solid fa-check text-green-500"></i> <span data-i18n="p1_msg">1,000 Messages / mo</span></li>
-                        <li class="flex items-center gap-3 text-slate-700"><i class="fa-solid fa-check text-green-500"></i> <span data-i18n="p1_csv">CSV Import</span></li>
+                        <li class="flex items-center gap-3 text-slate-700"><i
+                                class="fa-solid fa-check text-green-500"></i> <span data-i18n="p1_msg">1,000 Messages /
+                                mo</span></li>
+                        <li class="flex items-center gap-3 text-slate-700"><i
+                                class="fa-solid fa-check text-green-500"></i> <span data-i18n="p1_csv">CSV Import</span>
+                        </li>
                     </ul>
-                    <a href="#signup" onclick="selectPlan('Starter')" class="block w-full py-3 px-4 bg-slate-100 text-slate-900 font-bold text-center rounded-xl hover:bg-slate-200 transition" data-i18n="btn_waitlist">Join Waitlist</a>
+                    <a href="#signup" onclick="selectPlan('Starter')"
+                        class="block w-full py-3 px-4 bg-slate-100 text-slate-900 font-bold text-center rounded-xl hover:bg-slate-200 transition"
+                        data-i18n="btn_waitlist">Join Waitlist</a>
                 </div>
 
-                <div class="bg-slate-900 p-8 rounded-3xl shadow-2xl relative transform md:scale-105 border border-slate-800">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg" data-i18n="pop_badge">Most Popular</div>
+                <div
+                    class="bg-slate-900 p-8 rounded-3xl shadow-2xl relative transform md:scale-105 border border-slate-800">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg"
+                        data-i18n="pop_badge">Most Popular</div>
                     <h3 class="text-lg font-medium text-green-400 mb-2" data-i18n="plan_growth">Growth</h3>
                     <div class="flex items-baseline gap-1 mb-6">
                         <span class="text-4xl font-bold text-white">₹2,499</span>
                         <span class="text-slate-400">/mo</span>
                     </div>
                     <ul class="space-y-4 mb-8">
-                        <li class="flex items-center gap-3 text-slate-300"><div class="bg-green-500/20 p-1 rounded-full"><i class="fa-solid fa-check text-green-400 text-xs"></i></div> <span data-i18n="p2_msg">Unlimited Messages</span></li>
-                        <li class="flex items-center gap-3 text-slate-300"><div class="bg-green-500/20 p-1 rounded-full"><i class="fa-solid fa-check text-green-400 text-xs"></i></div> <span data-i18n="p2_green">Green Tick Assistance</span></li>
+                        <li class="flex items-center gap-3 text-slate-300">
+                            <div class="bg-green-500/20 p-1 rounded-full"><i
+                                    class="fa-solid fa-check text-green-400 text-xs"></i></div> <span
+                                data-i18n="p2_msg">Unlimited Messages</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-300">
+                            <div class="bg-green-500/20 p-1 rounded-full"><i
+                                    class="fa-solid fa-check text-green-400 text-xs"></i></div> <span
+                                data-i18n="p2_green">Green Tick Assistance</span>
+                        </li>
                     </ul>
-                    <a href="#signup" onclick="selectPlan('Growth')" class="block w-full py-3 px-4 bg-green-600 text-white font-bold text-center rounded-xl hover:bg-green-700 transition" data-i18n="nav_btn">Get Early Access</a>
+                    <a href="#signup" onclick="selectPlan('Growth')"
+                        class="block w-full py-3 px-4 bg-green-600 text-white font-bold text-center rounded-xl hover:bg-green-700 transition"
+                        data-i18n="nav_btn">Get Early Access</a>
                 </div>
             </div>
         </div>
@@ -227,7 +313,7 @@
     <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <div class="flex justify-center items-center gap-2 mb-6 text-white text-xl font-bold">
-                 <i class="fa-brands fa-whatsapp"></i> WhatsEngage
+                <i class="fa-brands fa-whatsapp"></i> WhatsEngage
             </div>
             <p class="text-slate-500 text-sm">&copy; 2025 WhatsEngage. All rights reserved.</p>
         </div>
@@ -242,7 +328,8 @@
                 hero_badge: "Accepting Early Access Users",
                 hero_title_1: "Reach Customers on the App",
                 hero_title_2: "They Actually Open.",
-                hero_desc: "Stop relying on emails with 5% open rates. Send personalized WhatsApp campaigns safely using the official API.",
+                // UPDATED HERE
+                hero_desc: "Stop wasting money on pamphlets that end up in the trash. Send offers directly to your customer's pocket on WhatsApp—where they actually look.",
                 form_title: "Register Your Business",
                 form_subtitle: "Get verified access to the WhatsApp API.",
                 lbl_name: "Your Name",
@@ -287,7 +374,8 @@
                 hero_badge: "अर्ली एक्सेस यूज़र्स के लिए खुला है",
                 hero_title_1: "ग्राहकों तक उस ऐप पर पहुँचें",
                 hero_title_2: "जिसे वे वास्तव में खोलते हैं।",
-                hero_desc: "5% ओपन रेट वाले ईमेल पर भरोसा करना बंद करें। आधिकारिक API का उपयोग करके सुरक्षित रूप से व्हाट्सएप कैंपेन भेजें।",
+                // UPDATED HERE (Translated the Pamphlet angle)
+                hero_desc: "पर्चे (Pamphlets) और अखबार के विज्ञापनों पर पैसा बर्बाद करना बंद करें। अपने ग्राहकों को सीधे व्हाट्सएप पर ऑफर भेजें—जहाँ वे वास्तव में देखते हैं।",
                 form_title: "अपना बिज़नेस रजिस्टर करें",
                 form_subtitle: "WhatsApp API का वेरीफाइड एक्सेस प्राप्त करें।",
                 lbl_name: "आपका नाम",
@@ -337,9 +425,9 @@
                 const key = element.getAttribute('data-i18n');
                 if (translations[currentLang][key]) {
                     element.classList.remove('fade-in');
-                    void element.offsetWidth; 
+                    void element.offsetWidth;
                     element.classList.add('fade-in');
-                    element.innerHTML = translations[currentLang][key]; // Use innerHTML to render HTML tags in phone
+                    element.innerHTML = translations[currentLang][key];
                 }
             });
 
@@ -349,17 +437,16 @@
                     element.setAttribute('placeholder', translations[currentLang][key]);
                 }
             });
-            
-            // Re-render feedback label if visible
+
             const feedbackLabel = document.getElementById('feedback-label');
-            if(feedbackLabel.offsetParent !== null) {
-                 feedbackLabel.innerText = translations[currentLang]['feedback_label'];
+            if (feedbackLabel.offsetParent !== null) {
+                feedbackLabel.innerText = translations[currentLang]['feedback_label'];
             }
         }
 
         function selectPlan(planName) {
             const planInput = document.getElementById('plan_input');
-            if(planInput) {
+            if (planInput) {
                 planInput.value = planName;
             }
 
@@ -367,17 +454,15 @@
             const feedbackName = document.getElementById('plan-name-display');
             const feedbackLabel = document.getElementById('feedback-label');
 
-            if(feedbackBox && feedbackName) {
+            if (feedbackBox && feedbackName) {
                 feedbackBox.classList.remove('hidden');
-                
-                // Set the label based on current language
+
                 feedbackLabel.innerText = translations[currentLang]['feedback_label'];
-                
-                // Translate the plan name itself (Starter -> स्टार्टर)
+
                 let displayPlan = planName;
-                if(currentLang === 'hi') {
-                    if(planName === 'Starter') displayPlan = 'स्टार्टर';
-                    if(planName === 'Growth') displayPlan = 'ग्रोथ';
+                if (currentLang === 'hi') {
+                    if (planName === 'Starter') displayPlan = 'स्टार्टर';
+                    if (planName === 'Growth') displayPlan = 'ग्रोथ';
                 }
                 feedbackName.innerText = displayPlan;
             }
@@ -388,4 +473,5 @@
         }
     </script>
 </body>
+
 </html>
