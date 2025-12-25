@@ -40,14 +40,26 @@ const translations = {
     uc_edu: "Coaching Institutes",
 
     // --- Features ---
-    feat_head: "Why Businesses Switch to WhatsEngage",
-    feat_sub: "Manual broadcasting is risky and slow. We built the engine designed for growth, not bans.",
-    f1_title: "Works on Your Phone",
-    f1_desc: "No laptop required. Don't have an Excel sheet? Just type numbers directly or copy-paste from your phone.",
-    f2_title: "Festival Offer Templates",
-    f2_desc: "Diwali, Eid, or New Year? Get pre-written offer templates that you can send in one click.",
-    f3_title: "Green Tick Verified",
-    f3_desc: "Stop getting blocked. We help you get the official Green Tick so your customers trust your brand.",
+    feat_head: "All-in-One Digital Growth Tool",
+    feat_sub: "From WhatsApp automation to content creation, we manage everything your business needs.",
+    
+    f1_title: "WhatsApp Marketing",
+    f1_desc: "Send bulk campaigns without bans. Use official APIs to reach customers where they are active.",
+    
+    f2_title: "FB & Insta Marketing",
+    f2_desc: "Grow your brand on Facebook & Instagram. We handle ads and organic reach strategies.",
+    
+    f3_title: "Payment Reminders",
+    f3_desc: "Automated account management. Send friendly 'Amount Due' reminders to recover payments faster.",
+    
+    f4_title: "Photo & Video Editing",
+    f4_desc: "Get professional banners, reels, and photo edits. We make your brand look premium.",
+    
+    f5_title: "Influencer Marketing",
+    f5_desc: "Connect with local influencers to promote your shop or product to the right audience.",
+    
+    f6_title: "On-Demand Features",
+    f6_desc: "Need something specific? We build custom features for your business at minimal charges.",
 
     // --- PRICING ---
     price_head: "Simple, Transparent Pricing",
@@ -121,14 +133,26 @@ const translations = {
     uc_edu: "कोचिंग इंस्टीट्यूट",
 
     // --- Features ---
-    feat_head: "बिज़नेस WhatsEngage पर क्यों आ रहे हैं?",
-    feat_sub: "मैन्युअल मैसेज भेजना जोखिम भरा और धीमा है। हमने ऐसा इंजन बनाया है जो बैन के लिए नहीं, बल्कि ग्रोथ के लिए है।",
-    f1_title: "आपके फोन पर काम करता है",
-    f1_desc: "लैपटॉप की कोई जरूरत नहीं। एक्सेल शीट नहीं है? बस नंबर सीधे टाइप करें या अपने फोन से कॉपी-पेस्ट करें।",
-    f2_title: "त्योहारों के ऑफर टेम्पलेट्स",
-    f2_desc: "दिवाली हो या न्यू ईयर, पहले से लिखे हुए ऑफर टेम्पलेट्स पाएं और एक क्लिक में भेजें।",
-    f3_title: "ग्रीन टिक वेरीफाइड",
-    f3_desc: "ब्लॉक होने से बचें। हम आपको आधिकारिक ग्रीन टिक दिलाने में मदद करते हैं ताकि ग्राहक आपके ब्रांड पर भरोसा करें।",
+    feat_head: "बिज़नेस ग्रोथ का कम्पलीट टूल",
+    feat_sub: "व्हाट्सएप मार्केटिंग से लेकर कंटेंट क्रिएशन तक, हम आपकी हर ज़रूरत पूरी करते हैं।",
+    
+    f1_title: "व्हाट्सएप मार्केटिंग",
+    f1_desc: "बिना बैन हुए बल्क मैसेज भेजें। आधिकारिक API का उपयोग करके ग्राहकों तक सीधे पहुँचें।",
+    
+    f2_title: "फेसबुक और इंस्टा मार्केटिंग",
+    f2_desc: "फेसबुक और इंस्टाग्राम पर अपना ब्रांड बढ़ाएं। हम विज्ञापन और ऑर्गेनिक रीच दोनों संभालते हैं।",
+    
+    f3_title: "पेमेंट रिमाइंडर्स",
+    f3_desc: "ऑटोमेटेड अकाउंट मैनेजमेंट। बकाया राशि तेजी से वसूलने के लिए 'पेमेंट रिमाइंडर' भेजें।",
+    
+    f4_title: "फोटो और वीडियो एडिटिंग",
+    f4_desc: "प्रोफेशनल बैनर, रील्स और फोटो एडिटिंग प्राप्त करें। अपने ब्रांड को प्रीमियम लुक दें।",
+    
+    f5_title: "इन्फ्लुएंसर मार्केटिंग",
+    f5_desc: "अपनी दुकान या उत्पाद को सही दर्शकों तक पहुँचाने के लिए स्थानीय इन्फ्लुएंसर से जुड़ें।",
+    
+    f6_title: "डिमांड पर कस्टम फीचर्स",
+    f6_desc: "क्या कुछ खास चाहिए? हम बहुत कम शुल्क पर आपके बिज़नेस के लिए कस्टम फीचर्स बनाते हैं।",
 
     // --- PRICING ---
     price_head: "सरल, पारदर्शी कीमतें",
