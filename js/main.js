@@ -42,22 +42,16 @@ const translations = {
     // --- Features ---
     feat_head: "All-in-One Digital Growth Tool",
     feat_sub: "From WhatsApp automation to content creation, we manage everything your business needs.",
-    
     f1_title: "WhatsApp Marketing",
     f1_desc: "Send bulk campaigns without bans. Use official APIs to reach customers where they are active.",
-    
     f2_title: "FB & Insta Marketing",
     f2_desc: "Grow your brand on Facebook & Instagram. We handle ads and organic reach strategies.",
-    
     f3_title: "Payment Reminders",
     f3_desc: "Automated account management. Send friendly 'Amount Due' reminders to recover payments faster.",
-    
     f4_title: "Photo & Video Editing",
     f4_desc: "Get professional banners, reels, and photo edits. We make your brand look premium.",
-    
     f5_title: "Influencer Marketing",
     f5_desc: "Connect with local influencers to promote your shop or product to the right audience.",
-    
     f6_title: "On-Demand Features",
     f6_desc: "Need something specific? We build custom features for your business at minimal charges.",
 
@@ -135,22 +129,16 @@ const translations = {
     // --- Features ---
     feat_head: "बिज़नेस ग्रोथ का कम्पलीट टूल",
     feat_sub: "व्हाट्सएप मार्केटिंग से लेकर कंटेंट क्रिएशन तक, हम आपकी हर ज़रूरत पूरी करते हैं।",
-    
     f1_title: "व्हाट्सएप मार्केटिंग",
     f1_desc: "बिना बैन हुए बल्क मैसेज भेजें। आधिकारिक API का उपयोग करके ग्राहकों तक सीधे पहुँचें।",
-    
     f2_title: "फेसबुक और इंस्टा मार्केटिंग",
     f2_desc: "फेसबुक और इंस्टाग्राम पर अपना ब्रांड बढ़ाएं। हम विज्ञापन और ऑर्गेनिक रीच दोनों संभालते हैं।",
-    
     f3_title: "पेमेंट रिमाइंडर्स",
     f3_desc: "ऑटोमेटेड अकाउंट मैनेजमेंट। बकाया राशि तेजी से वसूलने के लिए 'पेमेंट रिमाइंडर' भेजें।",
-    
     f4_title: "फोटो और वीडियो एडिटिंग",
     f4_desc: "प्रोफेशनल बैनर, रील्स और फोटो एडिटिंग प्राप्त करें। अपने ब्रांड को प्रीमियम लुक दें।",
-    
     f5_title: "इन्फ्लुएंसर मार्केटिंग",
     f5_desc: "अपनी दुकान या उत्पाद को सही दर्शकों तक पहुँचाने के लिए स्थानीय इन्फ्लुएंसर से जुड़ें।",
-    
     f6_title: "डिमांड पर कस्टम फीचर्स",
     f6_desc: "क्या कुछ खास चाहिए? हम बहुत कम शुल्क पर आपके बिज़नेस के लिए कस्टम फीचर्स बनाते हैं।",
 
@@ -195,7 +183,10 @@ const placeholderEls = Array.from(document.querySelectorAll("[data-placeholder]"
 
 function toggleLanguage() {
   currentLang = currentLang === "en" ? "hi" : "en";
-  document.getElementById("lang-label").innerText = currentLang === "en" ? "EN" : "हिंदी";
+  const langLabel = document.getElementById("lang-label");
+  if(langLabel) langLabel.innerText = currentLang === "en" ? "EN" : "हिंदी";
+  const mobileLangLabel = document.getElementById("mobile-lang-label");
+  if(mobileLangLabel) mobileLangLabel.innerText = currentLang === "en" ? "Switch Language (EN/HI)" : "भाषा बदलें (EN/HI)";
 
   i18nEls.forEach((element) => {
     const key = element.getAttribute("data-i18n");
@@ -250,9 +241,30 @@ function selectPlan(planName) {
     feedbackName.textContent = displayPlan;
   }
 
-  // Smooth scroll to form logic is handled by href anchor, but we focus for accessibility
   setTimeout(() => {
     const nameInput = document.querySelector('[name="name"]');
     if (nameInput) nameInput.focus();
   }, 600);
+}
+
+// --- NEW LOGIC: Mobile Menu & Auto Close ---
+const mobileBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if(mobileBtn && mobileMenu) {
+    // Toggle menu
+    mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Auto-close menu when a link inside it is clicked
+    const menuLinks = mobileMenu.querySelectorAll('a, button');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Slight delay so the language toggle has time to fire before closing
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 100);
+        });
+    });
 }
