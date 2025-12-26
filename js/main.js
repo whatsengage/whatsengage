@@ -28,6 +28,11 @@ const translations = {
     lbl_phone: "WhatsApp Number",
     lbl_addr: "Business Address (City)",
     ph_addr: "e.g. Indore, MP",
+    
+    // NEW FEEDBACK TRANSLATIONS
+    lbl_message: "Message / Feedback (Optional)",
+    ph_message: "Tell us about your business needs...",
+
     btn_submit: "Request Access",
     form_secure: "Your data is secure and never shared.",
     feedback_label: "Selected Plan:",
@@ -115,6 +120,11 @@ const translations = {
     lbl_phone: "व्हाट्सएप नंबर",
     lbl_addr: "बिज़नेस पता (शहर)",
     ph_addr: "उदा. गाडरवारा, म.प्र.",
+    
+    // NEW FEEDBACK TRANSLATIONS
+    lbl_message: "संदेश / सुझाव (वैकल्पिक)",
+    ph_message: "अपनी व्यावसायिक आवश्यकताओं के बारे में बताएं...",
+
     btn_submit: "एक्सेस का अनुरोध करें",
     form_secure: "आपका डेटा सुरक्षित है और कभी साझा नहीं किया जाता है।",
     feedback_label: "चुनी गई योजना:",
@@ -184,7 +194,7 @@ const placeholderEls = Array.from(document.querySelectorAll("[data-placeholder]"
 
 // Function to apply the current language to the DOM
 function applyLanguage() {
-  // --- UPDATED LOGIC: Show the TARGET language ---
+  // --- LOGIC: Show the TARGET language ---
   const langLabel = document.getElementById("lang-label");
   if(langLabel) {
       // If current is EN, button says "हिंदी" (Switch to Hindi)
