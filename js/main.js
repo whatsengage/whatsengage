@@ -66,7 +66,7 @@ const translations = {
     p2_msg: "Up to 50 Messages",
     p2_type: "Text + Images & Video",
     p3_msg: "Up to 500 Messages",
-    p3_type: "Full Multimedia + API",
+    p3_type: "Full Multimedia",
     badge_value: "Best Value",
     btn_waitlist: "Select Plan",
 
@@ -153,7 +153,7 @@ const translations = {
     p2_msg: "50 संदेश तक",
     p2_type: "टेक्स्ट + इमेजेज और वीडियो",
     p3_msg: "500 संदेश तक",
-    p3_type: "पूरा मल्टीमीडिया + API",
+    p3_type: "पूरा मल्टीमीडिया",
     badge_value: "बेस्ट वैल्यू",
     btn_waitlist: "प्लान चुनें",
 
@@ -175,26 +175,33 @@ const translations = {
   }
 };
 
+// Default Language: HINDI
 let currentLang = "hi";
 
 // Cache elements for performance
 const i18nEls = Array.from(document.querySelectorAll("[data-i18n]"));
 const placeholderEls = Array.from(document.querySelectorAll("[data-placeholder]"));
 
-function toggleLanguage() {
-  currentLang = currentLang === "hi" ? "hi" : "en";
+// Function to apply the current language to the DOM
+function applyLanguage() {
+  // --- UPDATED LOGIC: Show the TARGET language ---
   const langLabel = document.getElementById("lang-label");
-  if(langLabel) langLabel.innerText = currentLang === "en" ? "EN" : "हिंदी";
+  if(langLabel) {
+      // If current is EN, button says "हिंदी" (Switch to Hindi)
+      // If current is HI, button says "English" (Switch to English)
+      langLabel.innerText = currentLang === "en" ? "हिंदी" : "English";
+  }
+  
   const mobileLangLabel = document.getElementById("mobile-lang-label");
-  if(mobileLangLabel) mobileLangLabel.innerText = currentLang === "en" ? "Switch Language (EN/HI)" : "भाषा बदलें (EN/HI)";
+  if(mobileLangLabel) {
+      mobileLangLabel.innerText = currentLang === "en" ? "Switch to Hindi (हिंदी)" : "Switch to English";
+  }
 
+  // Update Text Elements
   i18nEls.forEach((element) => {
     const key = element.getAttribute("data-i18n");
     const value = translations[currentLang][key];
     if (value !== undefined) {
-      element.classList.remove("fade-in");
-      void element.offsetWidth; // trigger reflow to restart animation
-      element.classList.add("fade-in");
       if (/<[a-z][\s\S]*>/i.test(value)) {
         element.innerHTML = value;
       } else {
@@ -203,6 +210,7 @@ function toggleLanguage() {
     }
   });
 
+  // Update Inputs Placeholders
   placeholderEls.forEach((element) => {
     const key = element.getAttribute("data-placeholder");
     const ph = translations[currentLang][key];
@@ -211,13 +219,27 @@ function toggleLanguage() {
     }
   });
 
-  // Update feedback label if visible
+  // Update Plan Feedback Label if visible
   const feedbackLabel = document.getElementById("feedback-label");
   if (feedbackLabel && !feedbackLabel.parentElement.classList.contains("hidden")) {
      feedbackLabel.textContent = translations[currentLang]["feedback_label"];
   }
 }
 
+// Function called when button is clicked
+function toggleLanguage() {
+  currentLang = currentLang === "en" ? "hi" : "en";
+  applyLanguage();
+
+  // Add fade animation only on toggle
+  i18nEls.forEach(el => {
+    el.classList.remove("fade-in");
+    void el.offsetWidth; // trigger reflow
+    el.classList.add("fade-in");
+  });
+}
+
+// Plan Selection Logic
 function selectPlan(planName) {
   const planInput = document.getElementById("plan_input");
   if (planInput) planInput.value = planName;
@@ -247,24 +269,24 @@ function selectPlan(planName) {
   }, 600);
 }
 
-// --- NEW LOGIC: Mobile Menu & Auto Close ---
+// Mobile Menu Logic
 const mobileBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 
 if(mobileBtn && mobileMenu) {
-    // Toggle menu
     mobileBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
 
-    // Auto-close menu when a link inside it is clicked
     const menuLinks = mobileMenu.querySelectorAll('a, button');
     menuLinks.forEach(link => {
         link.addEventListener('click', () => {
-            // Slight delay so the language toggle has time to fire before closing
             setTimeout(() => {
                 mobileMenu.classList.add('hidden');
             }, 100);
         });
     });
 }
+
+// --- INITIALIZE ON LOAD ---
+applyLanguage();
