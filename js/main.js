@@ -175,7 +175,7 @@ const translations = {
   }
 };
 
-let currentLang = "en";
+let currentLang = "hi";
 
 // Cache elements for performance
 const i18nEls = Array.from(document.querySelectorAll("[data-i18n]"));
