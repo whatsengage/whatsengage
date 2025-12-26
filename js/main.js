@@ -182,7 +182,7 @@ const i18nEls = Array.from(document.querySelectorAll("[data-i18n]"));
 const placeholderEls = Array.from(document.querySelectorAll("[data-placeholder]"));
 
 function toggleLanguage() {
-  currentLang = currentLang === "en" ? "hi" : "en";
+  currentLang = currentLang === "hi" ? "hi" : "en";
   const langLabel = document.getElementById("lang-label");
   if(langLabel) langLabel.innerText = currentLang === "en" ? "EN" : "हिंदी";
   const mobileLangLabel = document.getElementById("mobile-lang-label");
